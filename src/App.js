@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Profile from './Profile'
+class App extends Component {
+  state = { 
+    show : true
+   };
+   showorhide=()=>{
+     this.setState({show: !this.state.show})
+   }
+  render() { 
+    return ( 
+<div>  
+   <div>
+   <button onClick ={this.showorhide}>bush button</button>
+    {this.state.show && <Profile/>}
+   </div> 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+</div> 
+     );
+  }
 }
-
+ 
 export default App;
